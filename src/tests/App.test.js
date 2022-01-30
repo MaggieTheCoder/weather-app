@@ -2,14 +2,19 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../components/App";
 
-xtest("renders learn react link", () => {
+xtest("renders application", () => {
   render(
     <App
       LocationDetails={{
         location: { city: "Cape Town", country: "South Africa" },
+         }}
+
+      ForecastDetails={{
+        forecasts={forecasts}
       }}
     />
+
   );
-  const linkElement = screen.getByText(/Weather App/i);
-  expect(linkElement).toBeInTheDocument();
+  const location = screen.getByText(/Weather App/i);
+  expect(location).toBeInTheDocument();
 });

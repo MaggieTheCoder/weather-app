@@ -8,7 +8,7 @@ describe("ForecastSummaries", () => {
     {
       date: 11111111,
       description: "stub description",
-      icon: "stubIcon1",
+      icon: "800",
       temperature: {
         max: 22,
         min: 12,
@@ -18,7 +18,7 @@ describe("ForecastSummaries", () => {
     {
       date: 121212121212,
       description: "stub description2",
-      icon: "stubIcon2",
+      icon: "602",
       temperature: {
         max: 26,
         min: 16,
@@ -29,5 +29,13 @@ describe("ForecastSummaries", () => {
   it("renders correctly", () => {
     const { asFragment } = render(<ForecastSummaries forecasts={validProps} />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("renders an array length of 2", () => {
+    const { getAllByTestId } = render(
+      <ForecastSummaries forecasts={validProps} />
+    );
+
+    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
   });
 });
