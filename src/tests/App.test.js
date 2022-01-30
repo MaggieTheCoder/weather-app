@@ -1,20 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "../components/App";
+import data from "../data/forecast.json";
 
-xtest("renders application", () => {
-  render(
-    <App
-      LocationDetails={{
-        location: { city: "Cape Town", country: "South Africa" },
-         }}
-
-      ForecastDetails={{
-        forecasts={forecasts}
-      }}
-    />
-
-  );
-  const location = screen.getByText(/Weather App/i);
+test("renders application", () => {
+  render(<App location={data.location} forecasts={data.forecasts} />);
+  const location = screen.getByText(/Cape Town, South Africa/i);
   expect(location).toBeInTheDocument();
 });
