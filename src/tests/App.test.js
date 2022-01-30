@@ -5,6 +5,6 @@ import data from "../data/forecast.json";
 
 test("renders application", () => {
   render(<App location={data.location} forecasts={data.forecasts} />);
-  const location = screen.getByText(/Cape Town, South Africa/i);
+  const location = screen.getByText(/Manchester, UK/i);
   expect(location).toBeInTheDocument();
 });
