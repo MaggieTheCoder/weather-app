@@ -1,40 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForecastSummary renders correctly 1`] = `
+exports[`ForecastSummaries renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="forecast-summary"
-    data-testid="forecast-summary"
+    class="forecast-summaries"
   >
     <div
-      class="forecast-summary__date"
+      class="forecast-summary"
+      data-testid="forecast-summary"
     >
-      Mon 30th Apr
+      <div
+        class="forecast-summary__date"
+      >
+        Thu 1st Jan
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <i
+          class="wi wi-day-snow"
+          name="owm"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        22°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description 1
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
     <div
-      class="forecast-summary__icon"
-      data-testid="forecast-icon"
+      class="forecast-summary"
+      data-testid="forecast-summary"
     >
-      <i
-        class="wi wi-day-sunny"
-        name="owm"
-      />
+      <div
+        class="forecast-summary__date"
+      >
+        Thu 1st Jan
+      </div>
+      <div
+        class="forecast-summary__icon"
+        data-testid="forecast-icon"
+      >
+        <i
+          class="wi wi-day-snow"
+          name="owm"
+        />
+      </div>
+      <div
+        class="forecast-summary__temperature"
+      >
+        24°C
+      </div>
+      <div
+        class="forecast-summary__description"
+      >
+        Stub description2
+      </div>
+      <button
+        type="button"
+      >
+        More details
+      </button>
     </div>
-    <div
-      class="forecast-summary__temperature"
-    >
-      22°C
-    </div>
-    <div
-      class="forecast-summary__description"
-    >
-      Stub description
-    </div>
-    <button
-      type="button"
-    >
-      More details
-    </button>
   </div>
 </DocumentFragment>
 `;

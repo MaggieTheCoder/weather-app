@@ -1,44 +1,48 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ForecastSummary from "../../components/ForecastSummary";
+import ForecastSummaries from "../../components/ForecastSummaries";
 
-describe("ForecastSummary", () => {
+describe("ForecastSummaries", () => {
   const validProps = {
-    date: 1525046400000,
-    description: "Stub description",
-    icon: "800",
-    temperature: {
-      min: 12,
-      max: 22,
-    },
-    onSelect: () => {},
+    forecasts: [
+      {
+        date: 1111111,
+        description: "Stub description 1",
+        icon: 602,
+        temperature: {
+          max: 22,
+          min: 12,
+        },
+      },
+      {
+        date: 2222222,
+        description: "Stub description2",
+        icon: 602,
+        temperature: {
+          max: 24,
+          min: 13,
+        },
+      },
+    ],
+    onForecastSelect: () => {},
   };
   it("renders correctly", () => {
     const { asFragment } = render(
-      <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
-        onSelect={validProps.onSelect}
+      <ForecastSummaries
+        forecasts={validProps.forecasts}
+        onForecastSelect={validProps.onForecastSelect}
       />
     );
     expect(asFragment()).toMatchSnapshot();
   });
-  it("renders correct values for props", () => {
-    const { getByText, getByTestId } = render(
-      <ForecastSummary
-        date={validProps.date}
-        description={validProps.description}
-        icon={validProps.icon}
-        temperature={validProps.temperature}
+
+  it("renders the correct number of ForecastSummary instances", () => {
+    const { getAllByTestId } = render(
+      <ForecastSummaries
+        forecasts={validProps.forecasts}
+        onForecastSelect={validProps.onForecastSelect}
       />
     );
-    expect(getByText("Mon 30th Apr")).toHaveClass("forecast-summary__date");
-    expect(getByText("Stub description")).toHaveClass(
-      "forecast-summary__description"
-    );
-    expect(getByTestId("forecast-icon")).toHaveClass("forecast-summary__icon");
-    expect(getByText("22°C")).toHaveClass("forecast-summary__temperature");
+    expect(getAllByTestId("forecast-summary")).toHaveLength(2);
   });
 });
