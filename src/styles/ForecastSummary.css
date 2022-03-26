@@ -1,0 +1,23 @@
+.forecast-summary__button {
+  border-radius: 15px 50px;
+  padding: 7px;
+  font-size: 12px;
+  border: 1px solid #0c9444;
+  background-color: #7cc243;
+}
+
+.forecast-summary__button:active {
+  background-color: #0c9444;
+}
+
+.forecast-summary__icon {
+  margin: 10px;
+}
+
+.forecast-summary__temperature {
+  margin: 10px;
+}
+
+.forecast-summary__description {
+  margin: 10px;
+}
